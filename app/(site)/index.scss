@@ -1,0 +1,42 @@
+
+@font-face {
+  
+
+}
+@font-face {
+    
+
+}
+
+
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: calc($sizeValue/10) * 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: #FFFFFF;
+}
+body {
+    margin: 0 !important;
+    overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+figure {
+    margin: 0;
+}
+.flex {
+    display: flex;
+    flex-flow:wrap;
+    justify-content: space-between;
+}
+
+@media(max-width: 500px){
+    
+}
+
+
