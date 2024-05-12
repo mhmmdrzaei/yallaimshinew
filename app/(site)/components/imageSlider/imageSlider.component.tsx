@@ -29,7 +29,7 @@ const ImageSlider = ({ desktopImages, mobileImages }: HeaderProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % (isMobile ? mobileImages.length : desktopImages.length));
-    }, 500); // Change image every 0.5 seconds
+    }, 1000); // Change image every 0.5 seconds
 
     return () => clearInterval(interval);
   }, [currentIndex, isMobile, desktopImages.length, mobileImages.length]);
