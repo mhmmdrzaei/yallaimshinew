@@ -3,6 +3,7 @@ import { HeroImage, Settings } from '@/sanity/types/Settings';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+
 type HeaderProps = {
   desktopImages: HeroImage[];
   mobileImages: HeroImage[];
@@ -29,34 +30,34 @@ const ImageSlider = ({ desktopImages, mobileImages }: HeaderProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % (isMobile ? mobileImages.length : desktopImages.length));
-    }, 1000); // Change image every 0.5 seconds
+    }, 750); 
 
     return () => clearInterval(interval);
   }, [currentIndex, isMobile, desktopImages.length, mobileImages.length]);
 
   return (
     <>
-      {isMobile && mobileImages.length > 0 && (
-        <Image
-          src={mobileImages[currentIndex].heroImgUrl}
-          alt={`Yalla Imshi Studio ${currentIndex}`}
-          width={800}
-          height={800}
-          key={currentIndex}
-        />
-      )}
-      {!isMobile && desktopImages.length > 0 && (
-        <Image
-          src={desktopImages[currentIndex].heroImgUrl}
-          alt={`Yalla Imshi Studio ${currentIndex}`}
-          width={2000}
-          height={2000}
-          priority={true}
-          key={currentIndex}
-        />
-      )}
+        {isMobile && mobileImages.length > 0 && (
+          <Image
+            src={mobileImages[currentIndex].heroImgUrl}
+            alt={`Yalla Imshi Studio ${currentIndex}`}
+            width={800}
+            height={800}
+            className="fadeTransition"
+          />
+        )}
+        {!isMobile && desktopImages.length > 0 && (
+          <Image
+            src={desktopImages[currentIndex].heroImgUrl}
+            alt={`Yalla Imshi Studio ${currentIndex}`}
+            width={2000}
+            height={2000}
+            className="fadeTransition"
+          />
+        )}
     </>
   );
 };
 
 export default ImageSlider;
+

@@ -97,7 +97,13 @@ figure {
         margin: 0;
     }
 }
-
+.fadeTransition {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fadeTransition:hover {
+    opacity: 0.8; /* Adjust opacity value as needed */
+  }
 @media(max-width: 670px){
     .main {
         h1 {
