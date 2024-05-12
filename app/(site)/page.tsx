@@ -40,7 +40,7 @@ export default async function Home() {
     <main>
       <section className="main">
       <ImageSlider desktopImages={herovisual} mobileImages={herovisualMobile} />
-      <h1>Yalla <span>Imshi</span></h1>
+      <h1>yalla <span>imshi</span></h1>
 
       </section>
         {settings.map((setting) => ( 
