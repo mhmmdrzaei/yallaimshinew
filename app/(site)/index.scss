@@ -64,13 +64,13 @@ figure {
     height: calc(100vh - 80px);
     overflow: hidden;
     margin-top: 30px;
-
+    border: 1px solid black;
     img {
         position: absolute;
         width: 100%;
         height: 100vh;
         object-fit: cover;
-        border: 1px solid black;
+       
     }
     h1 {
         position: absolute;
@@ -106,10 +106,14 @@ figure {
   }
 @media(max-width: 670px){
     .main {
+
         h1 {
             @include fontSize(50);
         }
-        height: calc(100dvh - 120px);
+        height: calc(100dvh - 110px);
+        width: 100%;
+        border: none;
+        margin-top: 0;
     }
     .info {
         margin-bottom: 20px;
