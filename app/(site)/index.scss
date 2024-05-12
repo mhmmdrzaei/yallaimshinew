@@ -127,7 +127,7 @@ figure {
 @media(max-width: 420px){
     .main {
         h1 {
-            @include fontSize(30);
+            @include fontSize(40);
         }
     }
 }
