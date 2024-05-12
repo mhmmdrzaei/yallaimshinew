@@ -20,5 +20,6 @@ export type Settings = {
    socialURL: string,
    urlLabel: string,
    urlurl: string,
+   location: string,
  
 };

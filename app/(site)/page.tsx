@@ -34,18 +34,27 @@ export default async function Home() {
   
   const settings = await getsettings()
   const { herovisual, herovisualMobile } = settings[0];
+  const currentYear = new Date().getFullYear();
   return (
    
     <main>
+      <section className="main">
+      <ImageSlider desktopImages={herovisual} mobileImages={herovisualMobile} />
+      <h1>Yalla <span>Imshi</span></h1>
+
+      </section>
         {settings.map((setting) => ( 
           
-          <>
-                <a href={`${setting.socialURL}`} target="_blank" >{setting.socialName}</a>
+          <section className='info' key={setting._id}>
+               
                 <a href={`mailto:${setting.urlurl}`} target="_blank" > {setting.urlLabel}</a>
-          </>
+                <a href={`${setting.socialURL}`} target="_blank" >{setting.socialName}</a>
+                <p>{setting.location} {currentYear}</p>
+
+          </section>
 
       ))}
-            <ImageSlider desktopImages={herovisual} mobileImages={herovisualMobile} />
+            
 
                     
 

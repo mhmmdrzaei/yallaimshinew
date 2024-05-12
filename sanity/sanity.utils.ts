@@ -28,6 +28,7 @@ export async function getsettings(): Promise<Settings[]> {
       "socialURL": socialInfo.socialURL,
       "urlLabel": contactInfo.urlLabel,
       "urlurl": contactInfo.urlurl,
+      location,
        
        
  }`

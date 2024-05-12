@@ -1,11 +1,11 @@
 "use client"
-import { Settings } from '@/sanity/types/Settings';
+import { HeroImage, Settings } from '@/sanity/types/Settings';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 type HeaderProps = {
-  desktopImages: Settings[];
-  mobileImages: Settings[];
+  desktopImages: HeroImage[];
+  mobileImages: HeroImage[];
 };
 
 const ImageSlider = ({ desktopImages, mobileImages }: HeaderProps) => {
@@ -35,24 +35,27 @@ const ImageSlider = ({ desktopImages, mobileImages }: HeaderProps) => {
   }, [currentIndex, isMobile, desktopImages.length, mobileImages.length]);
 
   return (
-    <div>
+    <>
       {isMobile && mobileImages.length > 0 && (
         <Image
           src={mobileImages[currentIndex].heroImgUrl}
-          alt={`Mobile Image ${currentIndex}`}
-          width={400}
-          height={300}
+          alt={`Yalla Imshi Studio ${currentIndex}`}
+          width={800}
+          height={800}
+          key={currentIndex}
         />
       )}
       {!isMobile && desktopImages.length > 0 && (
         <Image
           src={desktopImages[currentIndex].heroImgUrl}
-          alt={`Desktop Image ${currentIndex}`}
-          width={800}
-          height={600}
+          alt={`Yalla Imshi Studio ${currentIndex}`}
+          width={2000}
+          height={2000}
+          priority={true}
+          key={currentIndex}
         />
       )}
-    </div>
+    </>
   );
 };
 

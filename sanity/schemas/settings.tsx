@@ -60,7 +60,11 @@ export default {
         name: 'socialInfo',
         type: 'social'
       },
-
+      {
+        title: 'Location',
+        name: 'location',
+        type: 'string'
+      },
       {
         name: 'seo',
         title: 'SEO info',
