@@ -2,6 +2,7 @@ import { getsettings } from '@/sanity/sanity.utils'
 
 import type { Metadata } from 'next'
 import ImageSlider from './components/imageSlider/imageSlider.component'
+export const dynamic = 'force-dynamic'
 export async function generateMetadata(
 ): Promise<Metadata> {
   const settings = await getsettings()

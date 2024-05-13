@@ -2,7 +2,7 @@
 import { HeroImage, Settings } from '@/sanity/types/Settings';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
+export const dynamic = 'force-dynamic'
 
 type HeaderProps = {
   desktopImages: HeroImage[];
@@ -40,16 +40,16 @@ const ImageSlider = ({ desktopImages, mobileImages }: HeaderProps) => {
         {isMobile && mobileImages.length > 0 && (
           <Image
             src={mobileImages[currentIndex].heroImgUrl}
-            alt={`Yalla Imshi Studio ${currentIndex}`}
-            width={800}
-            height={800}
+            alt={`yalla imshi Studio project`}
+            width={1000}
+            height={1000}
             className="fadeTransition"
           />
         )}
         {!isMobile && desktopImages.length > 0 && (
           <Image
             src={desktopImages[currentIndex].heroImgUrl}
-            alt={`Yalla Imshi Studio ${currentIndex}`}
+            alt={`yalla imshi Studio`}
             width={2000}
             height={2000}
             className="fadeTransition"
